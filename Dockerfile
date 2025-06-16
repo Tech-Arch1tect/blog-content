@@ -9,7 +9,7 @@ WORKDIR /app
 
 RUN git clone https://github.com/Tech-Arch1tect/crust.git . && git checkout $BRANCH
 
-ENV VITE_API_BASE_PATH=${VITE_API_BASE_PATH}
+ARG VITE_API_BASE_PATH=
 
 RUN pnpm install --frozen-lockfile
 RUN pnpm run build
