@@ -1,0 +1,14 @@
+services:
+  crust:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BRANCH: main
+        VITE_API_BASE_PATH: http://api/api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
